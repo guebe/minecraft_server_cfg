@@ -103,8 +103,10 @@ sudo -u minecraft rm -rf minecraft/world
 sudo -u minecraft tar xfz /home/debian/minecraft_world.tgz 
 ```
 
-Check server status
+Start server, enable upon reboot and check status
 ```console
+systemctl start minecraft
+systemctl enable minecraft
 systemctl status minecraft
 ```
 
