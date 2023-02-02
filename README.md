@@ -1,8 +1,8 @@
 
-This README shows how to configure and run a public minecraft server.
-The server process is run via systemd using an unpriviledged system user and
-the world is backuped nightly. Moreover the server console can be accessed
-locally using mcrcon. A firewall is configured to only allow essential ports.
+This README shows how to configure and run a public minecraft server. The
+server process is run via systemd using an unpriviledged system user and the
+world is backuped nightly. Moreover the server console can be accessed locally
+using mcrcon. A firewall is configured to only allow essential ports.
 
 Update Linux after fresh install
 ```console
@@ -73,7 +73,8 @@ Enter the following commands in the minecraft console for a basic setup
 /op <insert_server_operator_user_here>
 ```
 
-Afterwards edit manually to give proper operator level. See https://minecraft.fandom.com/de/wiki/Server.properties#ops.json
+Afterwards edit manually to give proper operator level. See
+https://minecraft.fandom.com/de/wiki/Server.properties#ops.json
 ```console
 sudo -u minecraft vi /opt/minecraft/ops.json
 ```
