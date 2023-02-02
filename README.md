@@ -31,25 +31,20 @@ ssh-keygen # do this at your main machine
 scp pubkey servername:.ssh/authorized_keys
 ```
 
+switch ssh to non-standard port
+```console
+sudo vi /etc/ssh/sshd_config # change Port to 23000
+sudo systemctl restart ssh.service
+```
+
 Configure a firewall
 ```console
 apt install ufw
 ufw default deny
-ufw limit ssh
 ufw limit 23000/tcp # we later start shd on this port
-ufw limit 23001/tcp # temporary backup connection if anything goes wrong
 ufw limit 25565/tcp
 ufw enable
 ufw status verbose
-```
-
-Now switch ssh to different non-standard port
-```console
-/usr/sbin/sshd -D -p 23001 # now connect to our temporary backup connecion!
-vi /etc/ssh/sshd_config # change port to 23000
-systemctl restart ssh.service # now our new port
-ufw status numbered
-ufw delete <num> # delete now unused ports
 ```
 
 Install the minecraft server
