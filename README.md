@@ -66,15 +66,6 @@ vi server.properties # enable white-list, force-whitelist, rcon and set rcon pas
 java -Xmx1024M -Xms1024M -jar server.jar nogui # stop with /stop
 ```
 
-Manually start the minecraft server in a tmux session
-with recommended flags. The script also traps
-"Control-C" so that you do not stop the server
-accidentally. Use command /stop to stop the server.
-```console
-tmux
-sudo -u minecraft aikar.sh
-```
-
 Enter the following commands in the minecraft console for a basic setup
 ```console
 /whitelist on
