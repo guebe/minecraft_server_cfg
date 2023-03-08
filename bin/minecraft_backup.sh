@@ -1,7 +1,7 @@
 #!/bin/sh
 # Author: Guenter Ebermann
 
-LOCAL="/home/debian/minecraft_world.tgz"
+LOCAL=$1
 
 bail_out ()
 {
