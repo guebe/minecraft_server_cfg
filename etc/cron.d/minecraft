@@ -1,5 +1,5 @@
 # disabled daily backup because of size
-#0 2 * * * debian /home/debian/src/minecraft_server_cfg/bin/minecraft_backup.sh /home/debian/backup/minecraft_daily.tgz
+0 2 * * * debian /home/debian/src/minecraft_server_cfg/bin/minecraft_backup.sh /home/debian/backup/minecraft_daily.tgz
 0 3 * * 1 debian /home/debian/src/minecraft_server_cfg/bin/minecraft_backup.sh /home/debian/backup/minecraft_weekly.tgz
 0 4 1 * * debian /home/debian/src/minecraft_server_cfg/bin/minecraft_backup.sh /home/debian/backup/minecraft_monthly.tgz
 

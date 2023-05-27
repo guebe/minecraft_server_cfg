@@ -19,8 +19,13 @@ tar cfz "$LOCAL" -C /opt minecraft/world || bail_out "tar"
 logger "minecraft backup: starting server"
 sudo systemctl start minecraft
 
-logger "minecraft backup: rclone'ing"
-rclone copy "$LOCAL" mydropbox:backup || bail_out "rclone"
+echo "$LOCAL" | grep "daily" -
+if [ $? -eq 0 ]; then
+    logger "minecraft backup: no rclone'ing of daily file"
+else
+    logger "minecraft backup: rclone'ing"
+    rclone copy "$LOCAL" mydropbox:backup || bail_out "rclone"
+fi
 
 logger "minecraft backup: finished successfully"
 
